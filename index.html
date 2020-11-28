@@ -3,9 +3,28 @@
 <head>
  <title>Turtle Space Industries</title> 
  <link rel="icon" href="http://TurtleSpace.github.io/favicon.png" />
+ <style type="text/css">
+   .dosbox-container { width: 640px; height: 400px; }
+ </style>
 </head>
 <body>
 <h1>Welcome to Turtle Space Industries</h1>
 <p>Have you seen a Chickan today?</p>
+ <div id="dosbox"></div>
+       <br/>
+       <button onclick="dosbox.requestFullScreen();">Make fullscreen</button>
+       
+       <script type="text/javascript" src="https://js-dos.com/cdn/js-dos-api.js"></script>
+       <script type="text/javascript">
+         var dosbox = new Dosbox({
+           id: "dosbox",
+           onload: function (dosbox) {
+             dosbox.run("https://github.com/TurtleSpace/Moonshot/archive/main.zip", "./RUN.BAT");
+           },
+           onrun: function (dosbox, app) {
+             console.log("App '" + app + "' is runned");
+           }
+         });
+       </script>
 </body>
 </html>
