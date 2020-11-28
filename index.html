@@ -19,7 +19,7 @@
          var dosbox = new Dosbox({
            id: "dosbox",
            onload: function (dosbox) {
-             dosbox.run("https://turtlespace.github.io/Moonshot-main.zip", "TEST.EXE");
+             dosbox.run("https://turtlespace.github.io/Moonshot-main.zip", "./TEST");
            },
            onrun: function (dosbox, app) {
              console.log("App '" + app + "' is runned");
